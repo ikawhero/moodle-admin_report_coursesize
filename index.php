@@ -3,6 +3,11 @@
 require_once('../../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 
+/// This script may take some time to run so we need to extend the
+/// PHP timeout value
+set_time_limit(0);
+
+
 $output = optional_param('output', 'html', PARAM_ALPHA); /// output type
 $cat    = optional_param('cat', 0, PARAM_INT); /// include category names
 $size   = optional_param('size', 'any', PARAM_ALPHA); /// display size type
